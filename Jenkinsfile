@@ -63,8 +63,10 @@ pipeline {
     }
 
     stage('MacOS Integration tests') {
-      node('executor-v2-mac') {
-        sh 'python --version'
+      steps {
+        node('executor-v2-mac') {
+          sh 'python --version'
+        }
       }
     }
     // Only publish if the HEAD is tagged with the same version as in __version__.py
