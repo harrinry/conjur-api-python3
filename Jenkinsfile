@@ -50,17 +50,17 @@ pipeline {
       }
     }
 
-    stage('RHEL8 Integration tests') {
-      steps {
-        sh 'summon -e common ./bin/test_integration_rhel8'
-      }
+    // stage('RHEL8 Integration tests') {
+    //   steps {
+    //     sh 'summon -e common ./bin/test_integration_rhel8'
+    //   }
 
-      post {
-        always {
-          junit 'output/**/*.xml'
-        }
-      }
-    }
+    //   post {
+    //     always {
+    //       junit 'output/**/*.xml'
+    //     }
+    //   }
+    // }
 
     stage('MacOS Integration tests') {
       steps {
